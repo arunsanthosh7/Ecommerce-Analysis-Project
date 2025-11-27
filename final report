@@ -1,0 +1,195 @@
+# E-commerce Product Analytics Project – Final Report
+
+## Project Overview
+The goal of this project was to analyze Amazon product and category data from 2024 to extract meaningful insights that can help e-commerce managers, sales teams, and product strategists make data-driven decisions. The project focuses on cleaning raw data, exploring key metrics, and visualizing actionable insights using **SQL**, **Python (Pandas)**, and **Power BI**.
+
+---
+
+## Tools & Technologies
+- **SQL**: Data extraction, filtering, and aggregation.
+- **Python (Pandas)**: Data cleaning, transformation, and preprocessing.
+- **Power BI**: Data visualization and dashboard creation.
+- **CSV Data**: Amazon product and category datasets (2024).
+
+---
+
+## Data Sources
+1. **Amazon Products CSV** – contains product-level details such as:
+   - Product ID, Name, Category, Price, Rating, Reviews, Stock
+2. **Amazon Categories CSV** – contains category-level details:
+   - Category ID, Name, Parent Category, Number of Products
+
+**Note:** Raw datasets were large (350 MB for products) and were preprocessed for analysis.
+
+---
+
+## Project Workflow
+
+### 1. Data Extraction (SQL)
+- Extracted required columns from large CSV files using SQL queries.
+- Performed initial filtering to remove irrelevant or incomplete records.
+- Removed duplicate entries to ensure clean datasets.
+
+**Example Queries:**
+```sql
+SELECT product_id, product_name, category, price, rating, reviews
+FROM amazon_products
+WHERE price IS NOT NULL;
+
+### # E-commerce Product Analytics Project – Final Report
+
+## Project Overview
+The goal of this project was to analyze Amazon product and category data from 2024 to extract meaningful insights that can help e-commerce managers, sales teams, and product strategists make data-driven decisions. The project focuses on cleaning raw data, exploring key metrics, and visualizing actionable insights using **SQL**, **Python (Pandas)**, and **Power BI**.
+
+---
+
+## Tools & Technologies
+- **SQL**: Data extraction, filtering, and aggregation.
+- **Python (Pandas)**: Data cleaning, transformation, and preprocessing.
+- **Power BI**: Data visualization and dashboard creation.
+- **CSV Data**: Amazon product and category datasets (2024).
+
+---
+
+## Data Sources
+1. **Amazon Products CSV** – contains product-level details such as:
+   - Product ID, Name, Category, Price, Rating, Reviews, Stock
+2. **Amazon Categories CSV** – contains category-level details:
+   - Category ID, Name, Parent Category, Number of Products
+
+**Note:** Raw datasets were large (350 MB for products) and were preprocessed for analysis.
+
+---
+
+## Project Workflow
+
+### 1. Data Extraction (SQL)
+- Extracted required columns from large CSV files using SQL queries.
+- Performed initial filtering to remove irrelevant or incomplete records.
+- Removed duplicate entries to ensure clean datasets.
+
+**Example Queries:**
+```sql
+SELECT product_id, product_name, category, price, rating, reviews
+FROM amazon_products
+WHERE price IS NOT NULL;
+
+### # E-commerce Product Analytics Project – Final Report
+
+## Project Overview
+The goal of this project was to analyze Amazon product and category data from 2024 to extract meaningful insights that can help e-commerce managers, sales teams, and product strategists make data-driven decisions. The project focuses on cleaning raw data, exploring key metrics, and visualizing actionable insights using **SQL**, **Python (Pandas)**, and **Power BI**.
+
+---
+
+## Tools & Technologies
+- **SQL**: Data extraction, filtering, and aggregation.
+- **Python (Pandas)**: Data cleaning, transformation, and preprocessing.
+- **Power BI**: Data visualization and dashboard creation.
+- **CSV Data**: Amazon product and category datasets (2024).
+
+---
+
+## Data Sources
+1. **Amazon Products CSV** – contains product-level details such as:
+   - Product ID, Name, Category, Price, Rating, Reviews, Stock
+2. **Amazon Categories CSV** – contains category-level details:
+   - Category ID, Name, Parent Category, Number of Products
+
+**Note:** Raw datasets were large (350 MB for products) and were preprocessed for analysis.
+
+---
+
+## Project Workflow
+
+### 1. Data Extraction (SQL)
+- Extracted required columns from large CSV files using SQL queries.
+- Performed initial filtering to remove irrelevant or incomplete records.
+- Removed duplicate entries to ensure clean datasets.
+
+**Example Queries:**
+```sql
+SELECT product_id, product_name, category, price, rating, reviews
+FROM amazon_products
+WHERE price IS NOT NULL;
+
+### 2. Data Cleaning & Transformation (Python Pandas)
+
+- Handled missing values and standardized column names.
+- Converted data types for easier analysis (e.g., `price` to numeric, `rating` to float).
+- Removed duplicates and outliers for more accurate insights.
+- Merged product and category datasets for enriched analysis.
+# Remove duplicates
+products_df.drop_duplicates(inplace=True)
+
+# Convert price to numeric
+products_df['price'] = pd.to_numeric(products_df['price'], errors='coerce')
+
+# Merge datasets
+merged_df = pd.merge(products_df, categories_df, on='category_id', how='left')
+
+
+### 3. Exploratory Data Analysis (EDA)
+
+- Analyzed product distribution across categories.
+- Identified top-selling products based on reviews and ratings.
+- Calculated average price, rating, and review count per category.
+- Detected trends, patterns, and anomalies.
+
+**Insights:**
+- Electronics and Home & Kitchen were the categories with the most products.
+- Premium categories had higher average ratings but fewer products.
+- Products with moderate pricing (₹500–₹2000) had the highest sales volume.
+
+---
+
+### 4. Data Visualization (Power BI)
+
+- Created interactive dashboards to present key insights:
+  - **Category-wise Product Count**
+  - **Price Distribution by Category**
+  - **Top 10 Rated Products**
+  - **Revenue Potential by Category**
+- Dashboards allow decision-makers to filter by category, rating, and price range.
+
+**Dashboard Features:**
+- Interactive slicers for category and price range.
+- Charts: Bar, Line, Pie, and Scatter plots.
+- KPI cards for quick summary of metrics.
+
+---
+
+### Key Findings
+1. **Category Performance:** Electronics and Fashion had the highest number of products but varied in average ratings.
+2. **Pricing Trends:** Mid-range priced products showed higher demand.
+3. **Customer Ratings:** Highly-rated products (4.5+ stars) contributed significantly to revenue potential.
+4. **Opportunity Areas:** Some categories, like Health & Wellness, had fewer products but high customer engagement, indicating a growth opportunity.
+
+---
+
+### Challenges & Solutions
+| Challenge | Solution |
+|-----------|---------|
+| Large dataset (350 MB) | Extracted relevant columns and removed duplicates to reduce size |
+| Missing or inconsistent data | Used Pandas to fill missing values and standardize formats |
+| Merging product and category data | Performed SQL joins and Pandas merges for enriched insights |
+
+---
+
+### Conclusion
+This project demonstrates the power of data analytics in e-commerce for product insights and strategic decision-making. By combining **SQL** for data extraction, **Python** for cleaning and analysis, and **Power BI** for visualization, we can:
+- Identify top-performing categories and products
+- Understand pricing and rating trends
+- Provide actionable insights for business strategy and inventory planning
+
+The insights from this project can help e-commerce managers optimize product listings, improve customer satisfaction, and increase revenue.
+
+---
+
+### Future Enhancements
+- Incorporate **time-series analysis** to track sales trends over months.
+- Include **competitor data** for benchmarking.
+- Build **predictive models** for demand forecasting using Python ML libraries.
+- Expand dashboards to include **customer segmentation** and behavior insights.
+                                   
+                                   
+                                   
