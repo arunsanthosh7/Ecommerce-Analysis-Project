@@ -1,0 +1,15 @@
+# Force GitHub Linguist to detect SQL files
+*.sql linguist-detectable=true
+*.sql linguist-language=SQL
+
+# Make sure SQL files are counted even inside folders
+queries/*.sql linguist-detectable=true
+queries/*.sql linguist-language=SQL
+
+# Prevent Excel, images, and Power BI files from dominating stats
+*.xlsx linguist-documentation
+*.xls linguist-documentation
+*.png linguist-documentation
+*.jpg linguist-documentation
+*.jpeg linguist-documentation
+*.pbix linguist-documentation
